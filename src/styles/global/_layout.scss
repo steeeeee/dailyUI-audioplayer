@@ -1,0 +1,197 @@
+html, body {
+  height: 100%;
+  box-sizing: border-box;
+  background: linear-gradient($pinkGradient);
+  font-family: $font-stack
+}
+
+#root {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  
+  section {
+    background-color: $box-bg;
+    display: flex;
+    width: calc(70vh*2.5);
+    height: 70vh;
+    min-height: 250px;
+    border-radius: .5em;
+    
+    -webkit-box-shadow: 0px 46px 90px -8px rgba(51,24,75,.8);
+    -moz-box-shadow: 0px 46px 90px -8px rgba(51,24,75,.8);
+    box-shadow: 0px 46px 90px -8px rgba(51,24,75,.8);  
+    
+    .album {
+      display: flex;
+      flex-grow: 3;
+      background: url('http://orig00.deviantart.net/5806/f/2013/055/9/c/kavinsky___outrun_cd_cover__alternative__by_homey98-d5w1alg.png') center center no-repeat;
+      background-size: contain;
+      max-width: calc(70vh);
+      border-radius: .2em;
+      transform: scale(1.2) translateX(-5px);
+      transform-origin: left center;
+      z-index: 1000;
+      
+      
+      -webkit-box-shadow: 0px 22px 59px -1px rgba(51,24,75,0.41);
+      -moz-box-shadow: 0px 22px 59px -1px rgba(51,24,75,0.41);
+      box-shadow: 0px 22px 59px -1px rgba(51,24,75,0.41);
+    }
+    
+    .track-info {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        
+        .track-info {
+          &__topbar {
+            padding-left: calc((70vh*1.2)/4.8);
+            display: flex;
+            flex-grow: 1;
+            h1 {
+              display: flex;
+              flex-grow: 3;
+              font-size: 1.7em;
+              letter-spacing: .05em;
+              font-weight: 300;
+              margin: 0;
+              align-items: center;
+              color: #39435E;
+            }
+            span {
+              display: flex;
+              flex-grow: 1;
+              align-items: center;
+              font-size: 1.6em;
+              color: #39435E;
+            }
+          }
+          &__bottom {
+            display: flex;
+            flex-grow: 1;
+            padding-left: calc((70vh*1.2)/4.8);
+            justify-content: center;
+            align-items: center;
+            margin: 0px 0 0 -54px;
+            text-align: center;
+            h6 {
+              color: #39435E;
+              font-weight: 700;
+              font-size: .8em;
+              text-transform: uppercase;
+              letter-spacing: .05em;
+              margin: 0;
+            }
+            span {
+              margin: 0 10px;
+            }
+          }
+          &__player {
+            display: flex;
+            flex-grow: 4;
+            background-color: $dark-blue;
+          }
+        }
+    }
+    
+    nav {
+      display: flex;
+      flex-grow: 1;
+      max-width: 70px;
+      
+      ul {
+        display: flex;
+        flex-grow: 1;
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
+        
+        
+        li {
+          display: flex;
+          flex-grow: 1;
+          justify-content: center;
+          align-items: center;
+          background-color: $box-bg;
+          border-bottom: 1px solid #DDDEE0;
+          transform: scale(1) translateX(0px);
+          transition: all .3s ease;
+          overflow: hidden;
+          -webkit-box-shadow: 0px 0px 0px 0px rgba(51,24,75,0.41);
+          -moz-box-shadow: 0px 0px 0px 0px rgba(51,24,75,0.41);
+          box-shadow: 0px 0px 0px 0px rgba(51,24,75,0.41);
+          
+          font-size: .7em;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: .2em;
+          
+          span {
+            transform: scale(1) translateX(0px);
+            transition: all .3s ease;
+            color: #39435E;
+            font-size: 1.9em;
+            &:hover {
+              color: #182341
+            }
+          }
+          
+          &:before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            transform: translateX(-6px);
+            background-color: $accent;
+            opacity: 0;
+            transition: all .5s ease;
+            
+          }  
+          
+            &:hover:before {
+              opacity: 1;
+              transform: translateX(0px);
+            }
+          
+          &:first-child {
+            border-top-left-radius: .5em;
+          }
+          
+          &:last-child {
+            border-bottom-left-radius: .5em;
+            border-bottom: 0;
+          }
+          
+          &.active {
+            z-index: 100;
+            background-color: $dark-blue;
+            color: #fff;
+            border-bottom: 0;
+            border-top-left-radius: .3em;
+            border-bottom-left-radius: .3em;
+            transform: scale(1.2) translateX(-6px);
+            position: relative;
+            
+            -webkit-box-shadow: 0px 22px 59px -1px rgba(51,24,75,0.41);
+            -moz-box-shadow: 0px 22px 59px -1px rgba(51,24,75,0.41);
+            box-shadow: 0px 22px 59px -1px rgba(51,24,75,0.41);
+            
+            &:before {
+              opacity: 1;
+              transform: translateX(0px);
+            }
+            
+            span {
+              transform: scale(.8) translateX(6px);
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

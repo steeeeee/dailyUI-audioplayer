@@ -4,7 +4,7 @@
  * The code is envify'd - using 'DefinePlugin' in Webpack.
  */
 
-let loadedStore = null;
+let loadedStore = null
 
 if (process.env.NODE_ENV === 'production') {
   loadedStore = require('./configureStore.prod');
